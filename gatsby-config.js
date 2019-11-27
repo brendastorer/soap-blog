@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: "My personal blog",
+    title: "Coccobello Soaps",
     titleTemplate: "%s · Blog",
-    description: "Nostrud est duis proident ut dolore ipsum tempor Lorem.",
-    author: "danilowoz",
-    twitterUsername: "@danilowoz",
+    description: "A soap blog",
+    author: "Brenda Storer",
+    twitterUsername: "@brendamarienyc",
   },
   plugins: [
     {
@@ -20,7 +20,7 @@ module.exports = {
         plugins: [`gatsby-remark-images`],
       },
     },
-    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

@@ -1,8 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Row, Cell } from "griding"
 
-import { Container } from "../components/grid"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Pagination from "../components/pagination"
@@ -16,13 +14,13 @@ const BlogPostList = ({ data, pageContext }) => {
   return (
     <Layout>
       <Seo title="Blog" />
-      <Cell xs={12}>{currentPage === 1 && <Featured />}</Cell>
+      <div>{currentPage === 1 && <Featured />}</div>
 
-      <Container>
-        <Row>{allMarkdownRemark.edges.map(renderList)}</Row>
+      <main>
+        {allMarkdownRemark.edges.map(renderList)}
 
         <Pagination currentPage={currentPage} numPages={numPages} />
-      </Container>
+      </main>
     </Layout>
   )
 }

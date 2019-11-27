@@ -9,15 +9,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import Typography from "typography"
-import moragaTheme from "typography-theme-moraga"
-import { Provider as GridProvider } from "griding"
-
-import * as S from "../components/styles.css"
-
-const typography = new Typography(moragaTheme)
-typography.injectStyles()
-
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -30,11 +21,11 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <GridProvider>
+      <div>
         <>
           <main>{children}</main>
 
-          <S.Footer>
+          <footer>
             See the original article:{" "}
             <a href="https://blog.significa.pt/advanced-blog-system-in-gatsby-16e0cd6b85ad" target="_blank" rel="noopener noreferrer">
               Advanced blog system in Gatsby
@@ -47,9 +38,9 @@ const Layout = ({ children }) => (
             >
               @danilowoz
             </a>
-          </S.Footer>
+          </footer>
         </>
-      </GridProvider>
+      </div>
     )}
   />
 )

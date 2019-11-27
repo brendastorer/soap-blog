@@ -1,0 +1,27 @@
+$color-white: #f1f1f1;
+$color-black: #111111;
+$color-gray--light: #ccd1d8;
+$color-gray--medium: #b3b6bb;
+$color-gray--dark: #41474d;
+$color-blue: blue;
+$color-green: green;
+$color-action: $color-blue;
+$color-hover: $color-green;
+
+$button-background--primary: $color-action;
+$button-background--primary-hover: $color-hover;
+
+$font-color: $color-gray--dark;
+
+/* typography */
+$heading-font-family: futura-pt, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+$body-font-family: source-sans-pro, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+$heading-font-weight--bold: 600;
+$heading-font-weight--normal: 400;
+$heading-line-height: 1.2;
+$body-font-weight--bold: 700;
+$body-font-weight--normal: 400;
+$body-line-height: 1.6;
+
+/* z-index */
+

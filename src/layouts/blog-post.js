@@ -1,10 +1,7 @@
 import React from "react"
 import kebabCase from "lodash.kebabcase"
 import { graphql, Link } from "gatsby"
-import { Row, Cell } from "griding"
 
-import * as S from "../components/styles.css"
-import { Container } from "../components/grid"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ConcatWords from "../utils/ConcatWords"
@@ -19,61 +16,53 @@ const BlogPost = ({ data, pageContext }) => {
     <Layout>
       <Seo title={markdownRemark.frontmatter.title} />
 
-      <Container>
+      <main>
         <img src={imageSource} alt={markdownRemark.frontmatter.title} />
 
-        <S.Author>
+        <span>
           By{" "}
           <Link
             to={`/blog/author/${kebabCase(markdownRemark.frontmatter.author)}`}
           >
             {markdownRemark.frontmatter.author}
           </Link>
-        </S.Author>
+        </span>
 
-        <S.Title>{markdownRemark.frontmatter.title}</S.Title>
-        <S.DateText>{formatDate(markdownRemark.frontmatter.date)}</S.DateText>
+        <h2>{markdownRemark.frontmatter.title}</h2>
+        <span>{formatDate(markdownRemark.frontmatter.date)}</span>
 
-        <S.Category>
+        <div>
           {markdownRemark.frontmatter.category.map((cat, index, arr) => (
             <ConcatWords arrCount={arr.length} index={index} key={cat}>
               <Link to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>
             </ConcatWords>
           ))}
-        </S.Category>
+        </div>
 
-        <S.BlogContent
+        <div
           dangerouslySetInnerHTML={{ __html: markdownRemark.html }}
         />
 
-        <Row>
+        <div>
           {prev && (
-            <Cell xs={6}>
-              <Link to={prev.node.fields.slug}>
-                <S.NavigationPost>
-                  <div>
-                    {" "}
-                    {"<"} {prev.node.frontmatter.title}
-                  </div>
-                </S.NavigationPost>
-              </Link>
-            </Cell>
+            <Link to={prev.node.fields.slug}>
+              <div>
+                {" "}
+                {"<"} {prev.node.frontmatter.title}
+              </div>
+            </Link>
           )}
 
           {next && (
-            <Cell xs={6}>
-              <Link to={next.node.fields.slug}>
-                <S.NavigationPost>
-                  <div>
-                    {" "}
-                    {next.node.frontmatter.title} {">"}
-                  </div>
-                </S.NavigationPost>
-              </Link>
-            </Cell>
+            <Link to={next.node.fields.slug}>
+              <div>
+                {" "}
+                {next.node.frontmatter.title} {">"}
+              </div>
+            </Link>
           )}
-        </Row>
-      </Container>
+        </div>
+      </main>
     </Layout>
   )
 }

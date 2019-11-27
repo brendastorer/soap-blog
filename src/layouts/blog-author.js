@@ -1,10 +1,7 @@
 import React from "react"
 import kebabCase from "lodash.kebabcase"
-import { graphql } from "gatsby"
-import { Row, Cell } from "griding"
+import { graphql, Link } from "gatsby"
 
-import { Container } from "../components/grid"
-import * as S from "../components/styles.css"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Pagination from "../components/pagination"
@@ -18,28 +15,26 @@ const BlogAuhor = ({ data, pageContext }) => {
     <Layout>
       <Seo title={author} />
 
-      <Container>
-        <Row>
-          <Cell xs={12}>
-            <S.HeaderSectionTitle>Authors:</S.HeaderSectionTitle>
-            <S.HeaderSectionList>
-              {allAuthors.map(cat => (
-                <S.HeaderSectionLink to={`/blog/author/${kebabCase(cat)}`}>
-                  {cat}
-                </S.HeaderSectionLink>
-              ))}
-            </S.HeaderSectionList>
-          </Cell>
+      <main>
+        <h2>Authors:</h2>
+        <ul>
+          {allAuthors.map(cat => (
+            <li>
+              <Link to={`/blog/author/${kebabCase(cat)}`}>
+                {cat}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
           {allMarkdownRemark.edges.map(renderList)}
-        </Row>
 
         <Pagination
           currentPage={currentPage}
           numPages={numPages}
           contextPage={`author/${kebabCase(author)}`}
         />
-      </Container>
+      </main>
     </Layout>
   )
 }

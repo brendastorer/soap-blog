@@ -1,0 +1,81 @@
+html {
+  font-size: 18px;
+}
+
+body {
+  color: $color-black;
+  font-family: $body-font-family;
+  font-style: normal;
+  font-weight: $body-font-weight--normal;
+  line-height: $body-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight--bold;
+  line-height: $heading-line-height;
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2,
+h3 {
+  font-size: 1.5rem;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  line-height: $body-line-height;
+  margin: 0 0 1rem;
+}
+
+a {
+  color: $color-action;
+  text-decoration: none;
+  transition: color 100ms ease-in;
+
+  &:hover {
+    color: $color-hover;
+  }
+
+  &:focus {
+    outline: $color-action;
+    outline-offset: 2px;
+  }
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid $color-gray--dark;
+  margin: 1rem 0;
+}
+
+ul,
+ol {
+  line-height: $body-line-height;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+blockquote {
+  font-size: 1.35rem;
+  font-style: italic;
+  margin: 2rem;
+  position: relative;
+}

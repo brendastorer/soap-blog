@@ -1,14 +1,12 @@
 import React from "react"
 
-import * as S from "../components/styles.css"
-
 const Pagination = ({ numPages, currentPage, contextPage }) => {
   if (numPages <= 1) {
     return null
   }
 
   return (
-    <S.Pagination>
+    <ul>
       {Array.from({ length: numPages }).map((item, i) => {
         const index = i + 1
 
@@ -16,16 +14,16 @@ const Pagination = ({ numPages, currentPage, contextPage }) => {
         const link = index === 1 ? baseLink : `${baseLink}page/${index}`
 
         return (
-          <S.PaginationItem current={currentPage === index} key={link}>
+          <li current={currentPage === index} key={link}>
             {currentPage === index ? (
               <span>{index}</span>
             ) : (
               <a href={link}>{index}</a>
             )}
-          </S.PaginationItem>
+          </li>
         )
       })}
-    </S.Pagination>
+    </ul>
   )
 }
 

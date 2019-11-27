@@ -1,0 +1,42 @@
+@mixin button {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  appearance: none;
+  background-color: $button-background--primary;
+  border: 0;
+  border-radius: 3px;
+  color: $color-white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $heading-font-family;
+  font-size: 1rem;
+  font-weight: $heading-font-weight--normal;
+  line-height: 1;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $button-background--primary-hover;
+    color: $color-white;
+  }
+
+  &:focus {
+    outline: $color-action;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    background-color: $color-gray--medium;
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $color-gray--medium;
+    }
+  }
+}
